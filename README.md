@@ -4,10 +4,12 @@
 <br>
 
 ## 📌 목차
-* **1.** 📄 사내 기획서 자동 검토 및 공기업 양식 변환 멀티 에이전트
-* **2.** 💻 오픈소스 이슈 자동 분석 및 코드 리팩토링 에이전트
-<br>
+* **1.** 📄 사내 기획서 자동 검토 및 공기업 양식 변환 멀티 에이전트 
+👉 [Environment Setup & Project Structure](../wiki/01.-Environment-Setup-Project-Structure)
 
+* **2.** 💻 오픈소스 이슈 자동 분석 및 코드 리팩토링 에이전트
+👉 [Environment Setup & Project Structure](../wiki/02.AI-Multi‐Agent-System-for-Automated-Open‐Source-Maintenance)
+<br>
 <br>
 
 ## 1. 📄 사내 기획서 자동 검토 및 공기업 양식 변환 멀티 에이전트
