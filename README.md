@@ -1,6 +1,5 @@
 # 🚀 AI Agent Project (JUST FOR FUN!) 🤖✨
 
-안녕하세요! 👋
 <br>
 
 ## 📌 목차
@@ -8,7 +7,8 @@
 👉 [Environment Setup & Project Structure](https://github.com/KRdahee/AIAgentProjectPortfolio/wiki/01.-Environment-Setup-Project-Structure)
 
 * **2.** 💻 오픈소스 이슈 자동 분석 및 코드 리팩토링 에이전트
-👉 [Environment Setup & Project Structure](https://github.com/KRdahee/AIAgentProjectPortfolio/wiki/02.-AI-Multi-Agent-System-for-Automated-Open-Source-Maintenance)
+👉 [AI Multi-Agent System for Automated Open-Source Maintenance](https://github.com/KRdahee/AIAgentProjectPortfolio/wiki/02.-AI-Multi-Agent-System-for-Automated-Open-Source-Maintenance)
+
 <br>
 <br>
 
