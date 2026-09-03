@@ -1,4 +1,4 @@
-# 🚀 AI Agent Project Portfolio 🤖✨
+# 🚀 AI Agent Project (JUST FOR FUN!) 🤖✨
 
 안녕하세요! 👋 인공지능 에이전트 서비스 실무 커리큘럼을 바탕으로 기획하고 설계한 핵심 AI 에이전트 프로젝트 2종의 기획서입니다. 🔥
 
