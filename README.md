@@ -1,10 +1,7 @@
 # 🚀 AI Agent Project (JUST FOR FUN!) 🤖✨
-
 <br>
-
 https://app.notion.com/p/AI-3cf9ecfae81380269147d1d831ff99d2?source=copy_link -> 천천히 notion 정리중!
 
-<br>
 
 ## 📌 목차
 * **1.** 📄 사내 기획서 자동 검토 및 공기업 양식 변환 멀티 에이전트 
