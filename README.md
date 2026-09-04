@@ -1,4 +1,9 @@
 # 🚀 AI Agent Project (JUST FOR FUN!) 🤖✨
+
+<br>
+
+https://app.notion.com/p/AI-3cf9ecfae81380269147d1d831ff99d2?source=copy_link -> 천천히 notion 정리중!
+
 <br>
 
 ## 📌 목차
