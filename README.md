@@ -1,3 +1,73 @@
+# 💼사내 기획서 자동 검토 멀티 에이전트 
+**지능형 멀티 에이전트 및 HITL 워크플로우 기반 기획/행정 업무 자동화 시스템**
+
+## □ 추진 배경 및 시스템 개요
+ㅇ **(추진 배경)** 사내 기획서 초안 작성 및 공기업 제출용 표준 양식(개조식 등) 변환 작업에 과도한 반복 업무가 발생하며, 작성자 개인 역량에 따른 문서 품질 편차가 심화됨
+ㅇ **(목적)** 문서 논리 진단부터 데이터 보완, 공기업 표준 양식 변환까지 전 과정을 자동화하고, 최종 관리자가 승인하는 '멀티 에이전트 + HITL(Human-in-the-Loop)' 기반 업무 효율화 시스템 구축
+
+---
+
+## □ 핵심 아키텍처 및 비즈니스 임팩트
+
+ㅇ **(운영 개념)** 역할이 철저히 분리된 3개의 에이전트(Analyzer ➔ Converter ➔ Enhancer)가 협업하여 고품질의 기획서를 완성하는 자동화 파이프라인
+ㅇ **(주요 기능 및 기술)**
+   - **Pydantic 기반 정형화된 논리 검증:** 대형 언어 모델(LLM)의 환각(Hallucination)을 통제하고 기획서 필수 항목(추진 목적, 기대 효과 등) 누락 여부를 정확히 진단하여 수치화된 피드백 제공
+   - **LangGraph + HITL 워크플로우:** AI의 산출물을 무비판적으로 수용하지 않고, 최종 단계에서 인간 관리자가 검토 및 반려할 수 있는 승인 프로세스 구축
+ㅇ **(기대 효과)**
+   - **업무 소요 시간 85% 단축:** 기획서 1건당 평균 4.5~6시간 소요되던 검토 및 작성 작업을 15~20분 내외로 혁신적 단축
+   - **초회 반려율 70% 감소:** 공기업 특유의 개조식 어조와 3단 구조(배경-내용-효과)를 프롬프트로 강제하여 산출물 품질 상향 평준화
+
+---
+
+## □ 핵심 기술 스택 및 인프라 (Tech Stack & Infrastructure)
+ㅇ **(AI / LLM Engine)** Llama 3 (Groq API), Google Gemini API
+   - 유료 상용 API 대신 고성능 오픈소스 모델과 무료 티어를 결합하여 월간 인프라 '비용 제로 아키텍처' 달성
+ㅇ **(Framework & Core Logic)** 
+   - Python 3.10+
+   - FastAPI (백엔드 라우팅 및 API 서빙)
+   - Streamlit (프론트엔드 대시보드 및 사용자 인터페이스)
+   - LangGraph (에이전트 상태 관리 및 순환 루프 제어)
+   - Pydantic (구조화된 데이터 검증 및 출력 강제)
+
+---
+
+## □ 설치 및 로컬 실행 가이드 (Getting Started)
+
+### 1. 레포지토리 클론 및 폴더 이동
+```bash
+git clone [https://github.com/YourUsername/AIAgentProjectPortfolio01.git](https://github.com/YourUsername/AIAgentProjectPortfolio01.git)
+cd AIAgentProjectPortfolio01
+```
+
+### 2. 가상환경 생성 및 의존성 설치
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows 환경: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3. 환경 변수(.env) 설정
+프로젝트 루트 디렉토리에 `.env` 파일을 생성하고 아래의 API 키 정보를 입력합니다.
+```env
+GROQ_API_KEY="your_groq_api_key_here"
+GEMINI_API_KEY="your_gemini_api_key_here"
+```
+
+### 4. 애플리케이션 실행
+백엔드 서버와 프론트엔드 대시보드를 각각 실행합니다.
+
+```bash
+# Terminal 1: FastAPI 백엔드 서버 구동 (포트 8000)
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+# Terminal 2: Streamlit 프론트엔드 대시보드 구동 (포트 8501)
+streamlit run app.py
+```
+
+<br>
+<br>
+<br>
+
 # 🚀 AI Agent Project Portfolio (JUST FOR FUN!) 🤖✨
 
 https://app.notion.com/p/AI-3cf9ecfae81380269147d1d831ff99d2?source=copy_link -> 천천히 notion 정리중!
