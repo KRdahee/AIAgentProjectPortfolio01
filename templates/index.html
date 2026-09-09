@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>사내 기획서 자동 검토 시스템</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/fontawesome-all.min.css" />
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="/" class="logo"><strong>기획서 자동 검토 시스템</strong> by Multi-Agent</a>
+                    <ul class="icons">
+                        <li><a href="#" class="button primary small">로그인</a></li>
+                    </ul>
+                </header>
+
+                <section>
+                    <!-- 1. 기본 랜딩 화면 -->
+                    <div id="landing-view">
+                        <header class="main">
+                            <h2>ENTERPRISE WORKFLOW AUTOMATION</h2>
+                            <h1>조직의 맥락을 아는 지능형 기획서 자동 검토 시스템</h1>
+                            <p>좌측 사이드바에 프로젝트 초안을 입력하고 <strong>[AI 진단 및 양식 변환 실행]</strong>을 누르세요. 멀티 에이전트가 공기업 표준 개조식 변환부터 SWOT 분석까지 완결합니다.</p>
+                        </header>
+
+                        <div class="features">
+                            <article>
+                                <span class="icon solid fa-chart-line"></span>
+                                <div class="content">
+                                    <h3>다차원 AI 완성도 진단</h3>
+                                    <p>초안의 정합성을 점수화하고 사내 보고서 기준 누락 항목과 개선 방향을 도출합니다.</p>
+                                </div>
+                            </article>
+                            <article>
+                                <span class="icon solid fa-file-alt"></span>
+                                <div class="content">
+                                    <h3>표준 3단 개조식 변환</h3>
+                                    <p>서술형 원문을 실무 기획팀 표준 양식에 맞는 명확하고 간결한 개조식 본문으로 변환합니다.</p>
+                                </div>
+                            </article>
+                            <article>
+                                <span class="icon solid fa-user-check"></span>
+                                <div class="content">
+                                    <h3>휴먼 인 더 루프 제어</h3>
+                                    <p>관리자의 최종 승인 및 반려 피드백 기능을 통해 에이전트가 지시사항을 반영합니다.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- 2. 분석 결과 화면 (초기엔 숨김) -->
+                    <div id="result-view" style="display: none;">
+                        <header class="main">
+                            <h1>사내 기획서 통합 진단 및 검토 리포트</h1>
+                        </header>
+                        
+                        <div class="box alt">
+                            <div class="row gtr-uniform">
+                                <div class="col-3"><div class="box align-center"><strong>1. 초안 수집</strong><br>✔ 완료</div></div>
+                                <div class="col-3"><div class="box align-center"><strong>2. Analyzer 에이전트</strong><br>✔ 진단 완료</div></div>
+                                <div class="col-3"><div class="box align-center"><strong>3. Converter 에이전트</strong><br>✔ 3단 구조 변환</div></div>
+                                <div class="col-3"><div class="box align-center"><strong>4. Enhancer 에이전트</strong><br>✔ SWOT/정량화 완료</div></div>
+                            </div>
+                        </div>
+
+                        <hr class="major" />
+
+                        <h2>진단 및 전략 매트릭스</h2>
+                        <div class="row">
+                            <div class="col-4 col-12-medium">
+                                <div class="box">
+                                    <h3>종합 완성도 점수</h3>
+                                    <h1 id="res-score">-</h1>
+                                    <hr>
+                                    <h4>보완 필요 항목</h4>
+                                    <ul class="alt" id="res-missing"></ul>
+                                    <blockquote id="res-direction"></blockquote>
+                                </div>
+                            </div>
+                            <div class="col-8 col-12-medium">
+                                <h3>2x2 매트릭스 기반 AI 보완 SWOT 분석</h3>
+                                <div class="table-wrapper">
+                                    <table class="alt">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>강점 (S)</strong><br><span id="res-swot-s"></span></td>
+                                                <td><strong>약점 (W)</strong><br><span id="res-swot-w"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>기회 (O)</strong><br><span id="res-swot-o"></span></td>
+                                                <td><strong>위협 (T)</strong><br><span id="res-swot-t"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="box">
+                                    <h4>정량적 예상 지표 및 예산 배분</h4>
+                                    <pre><code id="res-metrics"></code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="major" />
+
+                        <h2>초안 원문 vs 공기업 3단 개조식 변환 비교</h2>
+                        <div class="row">
+                            <div class="col-6 col-12-small">
+                                <div class="box">
+                                    <h3>입력한 원본 초안</h3>
+                                    <p id="orig-title"></p>
+                                    <p id="orig-purpose"></p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-12-small">
+                                <div class="box">
+                                    <h3>AI 변환된 표준 3단 구조</h3>
+                                    <pre><code id="res-converted"></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <nav id="menu">
+                    <header class="major">
+                        <h2>기획서 초안 입력</h2>
+                    </header>
+                    
+                    <form id="draft-form">
+                        <div class="row gtr-uniform">
+                            <div class="col-12">
+                                <label for="title">프로젝트 명</label>
+                                <input type="text" id="title" value="지역 주민 참여형 다회용기 순환 체계 구축" />
+                            </div>
+                            <div class="col-12">
+                                <label for="purpose">추진 목적</label>
+                                <textarea id="purpose" rows="3">탄소중립 실천 및 플라스틱 쓰레기 감축을 위한 인프라 구축으로 ESG 경영 실현</textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="target">수혜 대상</label>
+                                <input type="text" id="target" value="지역 소상공인, 지자체 주민, 공공기관 임직원" />
+                            </div>
+                            <div class="col-12">
+                                <label for="content">핵심 내용</label>
+                                <textarea id="content" rows="4">1. 거점형 다회용기 무인 회수기 인프라 구축&#10;2. 자활센터 연계 일자리 창출 및 리워드 운영</textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="expected_effect">기대 효과</label>
+                                <textarea id="expected_effect" rows="2">일회용 플라스틱 30t 감축, 취약계층 일자리 창출</textarea>
+                            </div>
+                            <div class="col-12">
+                                <ul class="actions fit">
+                                    <li><button type="button" id="btn-submit" class="button primary fit">AI 진단 및 변환 실행</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </nav>
+
+                <section>
+                    <header class="major">
+                        <h2>실행 히스토리</h2>
+                    </header>
+                    <div class="mini-posts" id="history-container">
+                        <p>아직 실행된 히스토리가 없습니다.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/browser.min.js"></script>
+    <script src="/static/js/breakpoints.min.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="/static/js/main.js"></script>
+
+    <!-- FastAPI 비동기 통신 스크립트 -->
+    <script>
+        document.getElementById('btn-submit').addEventListener('click', async function() {
+            const btn = this;
+            btn.innerText = "분석 중...";
+            btn.disabled = true;
+
+            const payload = {
+                title: document.getElementById('title').value,
+                purpose: document.getElementById('purpose').value,
+                target: document.getElementById('target').value,
+                content: document.getElementById('content').value,
+                expected_effect: document.getElementById('expected_effect').value
+            };
+
+            try {
+                const response = await fetch('/api/run_workflow', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    // 뷰 전환
+                    document.getElementById('landing-view').style.display = 'none';
+                    document.getElementById('result-view').style.display = 'block';
+
+                    // 데이터 반영
+                    document.getElementById('res-score').innerText = data.analysis.score + "점";
+                    document.getElementById('res-missing').innerHTML = data.analysis.missing_items.map(i => `<li>${i}</li>`).join('');
+                    document.getElementById('res-direction').innerText = "개선 방향: " + data.analysis.improvement_direction;
+
+                    document.getElementById('res-swot-s').innerHTML = data.swot.strengths.join('<br>');
+                    document.getElementById('res-swot-w').innerHTML = data.swot.weaknesses.join('<br>');
+                    document.getElementById('res-swot-o').innerHTML = data.swot.opportunities.join('<br>');
+                    document.getElementById('res-swot-t').innerHTML = data.swot.threats.join('<br>');
+
+                    document.getElementById('res-metrics').innerText = data.metrics;
+                    document.getElementById('res-converted').innerText = data.converted;
+
+                    document.getElementById('orig-title').innerHTML = `<strong>프로젝트명:</strong> ${payload.title}`;
+                    document.getElementById('orig-purpose').innerHTML = `<strong>추진 목적:</strong> ${payload.purpose}`;
+
+                    // 히스토리 추가
+                    const time = new Date().toLocaleTimeString();
+                    const histContainer = document.getElementById('history-container');
+                    histContainer.innerHTML = `<article><p><strong>[${time}]</strong> ${payload.title}<br>완성도 점수: ${data.analysis.score}점</p></article>` + histContainer.innerHTML;
+                } else {
+                    alert('서버 오류가 발생했습니다.');
+                }
+            } catch (err) {
+                alert('통신 오류가 발생했습니다. FastAPI 서버 구동 여부를 확인하세요.');
+            } finally {
+                btn.innerText = "AI 진단 및 변환 실행";
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
